@@ -1,0 +1,14 @@
+{% extends "base/home.html" %}
+{% block content %}
+<div class="sup-bar">
+    <a href="{% url 'todos' %}">Back</a>
+</div>
+
+<div class="nbody">
+    <form method="post">
+        {% csrf_token %}
+        <p>You're going to delete this task: "{{todos}}"</p>
+        <input class="button "type="submit" value="Delete">
+    </form>
+</div>
+{% endblock content %}
